@@ -19,13 +19,10 @@ export default (props) => {
       activity: activityString,
       id: user._id
     };
-    console.log(routes.TRACK, payload, 'request')
     axios.post(routes.TRACK, payload)
       .then((data) => {
-        console.log(data);
       })
       .catch((err) => {
-        console.log(err, 'err tracking');
       })
   }
 

@@ -12,7 +12,6 @@ const ts = Date.now(),
 module.exports = {
   fetchCharacters: function(req, res) {
     let hash = md5(data);
-    console.log(data, 'SHOW ALL')
     axios
       .get(BASE_URL + `?ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}`)
       .then(response => {

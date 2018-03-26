@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './style.css';
-import axios from 'axios';
 import { connectToStore } from '../../lib/util';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';

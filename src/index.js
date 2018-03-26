@@ -6,7 +6,6 @@ import App from './containers/app';
 import { BrowserRouter, Router } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
-console.log('pppp', store);
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>

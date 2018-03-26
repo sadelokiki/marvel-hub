@@ -34,7 +34,6 @@ export function fetchCharacters() {
       dispatch(saveCharacters(response.data.results))
       // dispatch(setLoadingStatus(false));
     } catch (err) {
-      console.log(err);
     }
     dispatch(setLoadingStatus(false))
   }
@@ -51,7 +50,6 @@ export function fetchActivities() {
       dispatch(saveActivities(response.data.activities));
       dispatch(setLoadingStatus(true));
     } catch(err) {
-      console.log(err);
     }
     dispatch(setLoadingStatus(true));
   }

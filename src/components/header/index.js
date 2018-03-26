@@ -7,7 +7,6 @@ class HeaderComponent extends Component {
   constructor(props, context) {
     super(props, context)
     this.user = JSON.parse(localStorage.getItem('user')) || null
-    console.log(this.user, 'sdfsd')
   }
 
   render() {

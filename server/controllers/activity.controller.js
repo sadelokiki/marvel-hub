@@ -26,14 +26,12 @@ module.exports = {
   },
   
   fetchUserActivities: function(req, res) {
-    console.log(req.params)
     User.findOne({_id: req.params.id})
       .populate('activities')
       .exec(function(err, activities) {
         if(err) {
           return res.status(400).json(err);
         }
-        console.log(activities, 'activit');
         return res.status(200).json(activities);
       })
   },

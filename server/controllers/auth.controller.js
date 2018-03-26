@@ -23,7 +23,6 @@ generatePassword: function() {
 //signup a new user
   signup: function(req, res) {
     let user = req.body;
-    console.log(user, 'req from client')
     let saltRounds = 10;
     var salt = bcrypt.genSaltSync(saltRounds);
     user.password = bcrypt.hashSync(user.password, salt);
@@ -35,10 +34,8 @@ generatePassword: function() {
       });
     } else {
       let newUser = new User(user);
-      console.log('new user:: ', newUser);
       newUser.save(function(err) {
         if (err) {
-          console.log(err);
           if (err.code === 11000) {
             return res.status(401).send({
               success: false,
@@ -79,19 +76,15 @@ generatePassword: function() {
           });
         } else {
           let validPassword = user.comparePassword(req.body.password);
-          console.log(validPassword, 'valiid')
-          console.log(validPassword, 'statin contorller')
           if (!validPassword) {
             return res.status(401).send({
               success: false,
               message: 'Invalid Username or Password!'
             });
           } else {
-            console.log(config.secret, 'dkfnklsndf')
             let token = jwt.sign(user.toJSON(), config.secret, {
               expiresIn: 1440
             });
-            console.log(token, 'tokeeen')
             res.send({
               success: true,
               message: 'You are logged in',

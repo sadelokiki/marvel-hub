@@ -14,12 +14,10 @@ export default class Auth {
       var promise = new Promise((resolve, reject) => {
         var route = (type === '/signup') ? routes.SIGNUP : routes.LOGIN
         axios.post(route, userCredentials).then(response => {
-            console.log(response.data);
             localStorage.setItem('user', JSON.stringify(response.data.user));
             resolve(response);
           })
           .catch(err => {
-            console.log(err);
             reject(err);
           })
       })

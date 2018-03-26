@@ -28,12 +28,10 @@ export default class LoginForm extends Component {
   }
 
   onLoginSuccess(res) {
-    console.log(res, this.props, 'sdfsdf');
     this.props.history.push(`/home`);
   }
 
   onLoginFailure(err) {
-    console.log('unable to login')
       // notify.show(err.response.data.message, 'error');
   }
 
