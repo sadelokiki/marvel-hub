@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connectToStore } from  '../lib/util';
 import Routes from './routes';
 
 class PageWrapper extends Component {

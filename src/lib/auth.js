@@ -1,8 +1,5 @@
 import { routes } from './constants';
-import { encrypt } from './util';
 import axios from 'axios';
-import * as crypto from 'crypto';
-const undefsafe = require('undefsafe');
 
 export default class Auth {
   static userIsLoggedIn() {
@@ -10,11 +7,11 @@ export default class Auth {
   }
 
   static logUserIn(userCredentials, type) {
-    let user, token;
       var promise = new Promise((resolve, reject) => {
         var route = (type === '/signup') ? routes.SIGNUP : routes.LOGIN
         axios.post(route, userCredentials).then(response => {
             localStorage.setItem('user', JSON.stringify(response.data.user));
+            localStorage.setItem('user_token', response.data.token);
             resolve(response);
           })
           .catch(err => {

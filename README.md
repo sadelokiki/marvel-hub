@@ -12,3 +12,8 @@ This project consumes marvel API, enables you to view charactes and information 
 - Run npm start to view app
 - Go to http://localhost:3000 to see the app running live :)
 
+### How to get it up
+- Run more tests
+- Clean up UI
+
+

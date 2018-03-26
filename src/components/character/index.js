@@ -1,10 +1,9 @@
 import React from 'react';
-import { Card, Icon, Modal } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import axios from 'axios';
 import { routes } from '../../lib/constants';
 import './style.css';
 
-const baseUrl = `http://localhost:3001/api`
 export default (props) => {
   const onClickCard = (cardName) => {
     props.openModal();

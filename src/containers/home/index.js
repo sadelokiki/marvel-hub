@@ -5,9 +5,6 @@ import Characterlist from '../../components/home';
 import './style.css';
 
 class Home extends Component {
-  constructor(props, context) {
-    super(props, context);
-  }
   
   componentDidMount() {
     this.props.fetchCharacters();

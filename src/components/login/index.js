@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Button, Input } from 'semantic-ui-react';
+import { Button, Input } from 'semantic-ui-react';
 import './style.css';
 import Auth from '../../lib/auth';
 

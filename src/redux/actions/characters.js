@@ -1,7 +1,6 @@
 import BASE_URL, { routes } from '../../lib/constants';
 import axios from 'axios';
 import { SAVE_CHARACTERS, SET_LOADING_STATUS, SAVE_ACTIVITIES} from '../actionsConstants';
-import { toast } from 'react-toastify';
 
 
 export function setLoadingStatus(payload) {

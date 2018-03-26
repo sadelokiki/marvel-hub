@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import './style.css';
 import { connectToStore } from '../../lib/util';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import undefsafe from 'undefsafe';
 
 
-import { Grid, Card, Icon, Loader, Modal, Image, Header } from 'semantic-ui-react';
+import { Grid, Loader, Modal, Header } from 'semantic-ui-react';
 import CharacterComponent from '../character';
 
 class Characterlist extends Component {
@@ -65,7 +62,7 @@ class Characterlist extends Component {
 
   getSelectedCharacter(selected) {
     let filtered = this.props.characters.allCharacters.filter(function(item) { 
-      return item == selected
+      return item === selected
     }); 
     let details = filtered[0]
     this.setState({
