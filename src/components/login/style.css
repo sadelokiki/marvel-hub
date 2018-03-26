@@ -1,3 +1,9 @@
 .form-wrapper {
   text-align: center;
 }
+
+p {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}

@@ -5,5 +5,7 @@ export const ENCRYPTIONSECRETKEY = '</#%!marVEL_Hub!%#/>';
 
 export const routes = { 
   LOGIN: `${BASE_URL}/login`,
-  SIGNUP: `${BASE_URL}/signup`
+  SIGNUP: `${BASE_URL}/signup`,
+  TRACK: `${BASE_URL}/activities/create`,
+  FETCH_ACTIVITIES: `${BASE_URL}/activities`
 }

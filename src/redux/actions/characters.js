@@ -1,6 +1,6 @@
-import BASE_URL from '../../lib/constants';
+import BASE_URL, { routes } from '../../lib/constants';
 import axios from 'axios';
-import { SAVE_CHARACTERS, SET_LOADING_STATUS, } from '../actionsConstants';
+import { SAVE_CHARACTERS, SET_LOADING_STATUS, SAVE_ACTIVITIES} from '../actionsConstants';
 import { toast } from 'react-toastify';
 
 
@@ -18,9 +18,16 @@ export function saveCharacters(payload) {
   }
 }
 
+export function saveActivities(payload) {
+  return {
+    type: SAVE_ACTIVITIES,
+    payload
+  }
+}
+
 
 export function fetchCharacters() {
-  return async (dispatch, ownProps) => {1
+  return async (dispatch, ownProps) => {
     dispatch(setLoadingStatus(true));
     try {
       let response = await axios.get(BASE_URL + `/characters`);
@@ -30,5 +37,22 @@ export function fetchCharacters() {
       console.log(err);
     }
     dispatch(setLoadingStatus(false))
+  }
+
+
+}
+
+export function fetchActivities() {
+  let user = JSON.parse(localStorage.getItem('user')) || null
+  return async (dispatch, ownProps ) => {
+    dispatch(setLoadingStatus(true));
+    try {
+      let response = await axios.get( routes.FETCH_ACTIVITIES + `/${user._id}`);
+      dispatch(saveActivities(response.data.activities));
+      dispatch(setLoadingStatus(true));
+    } catch(err) {
+      console.log(err);
+    }
+    dispatch(setLoadingStatus(true));
   }
 }

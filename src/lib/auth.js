@@ -15,7 +15,6 @@ export default class Auth {
         var route = (type === '/signup') ? routes.SIGNUP : routes.LOGIN
         axios.post(route, userCredentials).then(response => {
             console.log(response.data);
-            localStorage.setItem('user_token', undefsafe(response.data, 'token'));
             localStorage.setItem('user', JSON.stringify(response.data.user));
             resolve(response);
           })

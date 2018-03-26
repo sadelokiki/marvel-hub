@@ -1,3 +1,14 @@
 .wrapper {
   text-align: center;
 }
+
+.welcome {
+  display: inline-block;
+  float: right;
+  color: blue;
+}
+
+.icon {
+  float: left;
+  font-size: 20px;
+}

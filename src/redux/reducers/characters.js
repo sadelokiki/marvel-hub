@@ -1,4 +1,4 @@
-import { SAVE_CHARACTERS, SET_LOADING_STATUS } from "../actionsConstants";
+import { SAVE_CHARACTERS, SET_LOADING_STATUS, SAVE_ACTIVITIES } from "../actionsConstants";
 
 export default function characters(state={}, action) {
   switch(action.type) {
@@ -7,6 +7,8 @@ export default function characters(state={}, action) {
     return {...state, allCharacters: action.payload};
     case SET_LOADING_STATUS: 
       return {...state, loading: action.payload}
+    case SAVE_ACTIVITIES:
+      return {...state, activities: action.payload}
     default:
       return state;
   }

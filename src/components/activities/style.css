@@ -1,0 +1,12 @@
+.activity-wrapper {
+  text-align: center;
+}
+
+span {
+  padding: 50px;
+}
+
+.ui.header {
+  text-align: center;
+  text-decoration: underline;
+}

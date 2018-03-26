@@ -15,8 +15,9 @@ const defaultState = {
   characters: {
     selectedCharacter: null,
     allCharacters: null,
-    loading: false
-  }
+    loading: false,
+    activities: null
+  },
 }
 
 export default createStore(rootReducer, defaultState, configureStore());

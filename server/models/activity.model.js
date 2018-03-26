@@ -5,11 +5,7 @@ const activitySchema = new Schema({
   name: {
     type: String
   },
-  ownerId: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-    required: true
-  }
+  user: {type: Schema.Types.ObjectId, ref: 'users'}
 }, { timestamps: {createdAt: "createdAt" } });
 
-module.exports = mongoose.model("Activity", eventSchema);
+module.exports = mongoose.model("activities", activitySchema);

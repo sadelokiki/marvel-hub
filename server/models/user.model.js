@@ -10,7 +10,8 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  activities: [{type: Schema.Types.ObjectId, ref: 'activities'}]
 })
 
 // userSchema.pre("save", (next) => {
@@ -32,6 +33,16 @@ const userSchema = new Schema({
 userSchema.methods.comparePassword = function (password) {
   const user = this;
   return bcrypt.compare(password, user.password);
+};
+
+userSchema.methods.addActivity = function(activityId, cb) {
+  var activities = this.activities;
+  if (activities.indexOf(activityId) < 0) {
+    this.activities.push(activityId);
+    this.save(cb);
+  } else {
+    return cb;
+  }
 };
 
 

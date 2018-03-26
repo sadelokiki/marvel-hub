@@ -62,6 +62,10 @@ export default class LoginForm extends Component {
     this.props.history.push('/signup')
   }
 
+  gotoLogin() {
+    this.props.history.push('/')
+  }
+
   renderLogin() {
     return (
       <div className="container form-wrapper">
@@ -76,7 +80,7 @@ export default class LoginForm extends Component {
             <div className="center">
                 <Button className='green' waves='light'>Login</Button>
             </div>
-            <p onClick={this.goToSignup.bind(this)}></p>
+           {this.props.match.url === '/signup' ? <p onClick={this.gotoLogin.bind(this)}>Login</p> : <p onClick={this.goToSignup.bind(this)}>Signup</p> }
           </form>
       </div>
     )
