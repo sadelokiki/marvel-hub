@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import pages from './pages';
-// import CreateHair from '../components/newHair';
-// import CreateComment from '../components/newComment';
+import Home from './home';
+import LoginForm from '../components/login';
 
 export default class Routes extends Component {
   render() {
     return (
       <div>
-        <Route exact path={this.props.match.url} component={ Pages }  />
+        <Route exact path='/' component={ LoginForm }  />
+        <Route exact path='/signup' component={ LoginForm }  />
+        <Route exact path='/home' component={ Home }  />
       </div>
     )
   }

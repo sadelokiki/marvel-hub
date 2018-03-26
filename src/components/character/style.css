@@ -1,0 +1,15 @@
+.icon-wrapper {
+  margin: 10px;
+}
+
+.edit {
+  color: cadetblue;
+}
+
+.remove {
+  color: red;
+}
+
+.card {
+  cursor: pointer;
+}

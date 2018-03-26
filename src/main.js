@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Pages from './containers/pages';
+import dashboard from './containers';
 
 
 const Main = () => {
   return (
-    <div>
-      <Route path='/' component={Pages}/>
+    <div className="full-height">
+      <Route path="/" component={dashboard} />
     </div>
   )
 }
