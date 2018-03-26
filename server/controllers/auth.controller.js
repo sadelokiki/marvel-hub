@@ -7,18 +7,6 @@ const bcrypt = require('bcrypt')
 
 
 module.exports  = {
-  // function to generate password
-generatePassword: function() {
-  let passLength = 8;
-  let alphaNum = '0123456789abcdefghijklnopqrstuvwxyz' +
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$^&%*()+=-[]{}|:<>?,.';
-  let password = '';
-  for (let i = 0; i < passLength; ++i) {
-    password += alphaNum.charAt(Math.floor(
-      Math.random() * alphaNum.length));
-  }
-  return password;
-},
 
 //signup a new user
   signup: function(req, res) {
