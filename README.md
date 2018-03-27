@@ -2,7 +2,7 @@
 
 This project consumes marvel API, enables you to view charactes and information about them, It also tracks your activities!
 
-### How to get it up
+### How to run:
 - Clone project
 - cd to project, run:
 - Run npm install
@@ -12,7 +12,7 @@ This project consumes marvel API, enables you to view charactes and information 
 - Run npm start to view app
 - Go to http://localhost:3000 to see the app running live :)
 
-### How to get it up
+### Backlog:
 - Run more tests
 - Clean up UI
 
