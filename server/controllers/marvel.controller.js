@@ -19,6 +19,7 @@ module.exports = {
         res.send(results.data);
       })
       .catch(err => {
+        console.log(err, 'err from fetch')
         res.status(400).json(err);
       })
   }

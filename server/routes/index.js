@@ -1,8 +1,8 @@
-var express = require('express');
-    router = express.Router(),
-   Auth = require('../controllers/auth.controller.js');
-   Marvel = require('../controllers/marvel.controller');
-   Activity = require('../controllers/activity.controller');
+const express = require('express');
+const  Auth = require('../controllers/auth.controller.js');
+const Marvel = require('../controllers/marvel.controller');
+const Activity = require('../controllers/activity.controller');
+const router = express.Router();
 
 
 module.exports = function(app) {

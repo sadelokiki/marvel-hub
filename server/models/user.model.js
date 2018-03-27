@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-    Schema = mongoose.Schema;
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   username: {
@@ -15,8 +15,7 @@ const userSchema = new Schema({
 })
 
 userSchema.methods.comparePassword = function (password) {
-  const user = this;
-  return bcrypt.compare(password, user.password);
+  return bcrypt.compare(password, this.password);
 };
 
 userSchema.methods.addActivity = function(activityId, cb) {
@@ -28,7 +27,5 @@ userSchema.methods.addActivity = function(activityId, cb) {
     return cb;
   }
 };
-
-
 
 module.exports = mongoose.model('users', userSchema);
