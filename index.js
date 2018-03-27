@@ -1,10 +1,16 @@
-var port = 3001
-var app = require('./config/express')();
+var express = require('express');
+const port = 3001
 
+var app = require('./config/express')(express());
 
-app.listen(port, function(err) {
-  if (err) {
-    console.log(err);
-  }
-  console.log('App starting on port 3001');
-})
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(port, (err) => {
+    if (err) {
+      console.log(err);
+    }
+  
+    console.log('App starting on port', port);
+  });
+}
+
+module.exports = app;

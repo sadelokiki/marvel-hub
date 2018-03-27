@@ -1,11 +1,11 @@
 const express = require('express');
-const  Auth = require('../controllers/auth.controller.js');
+const Auth = require('../controllers/auth.controller.js');
 const Marvel = require('../controllers/marvel.controller');
 const Activity = require('../controllers/activity.controller');
 const router = express.Router();
 
 
-module.exports = function(app) {
+module.exports = (app) => {
   router.route('/signup')
     .post(Auth.signup);
 

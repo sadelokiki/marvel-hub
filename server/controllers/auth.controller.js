@@ -4,16 +4,12 @@ const config = require('../../config/config');
 const undefsafe = require('undefsafe');
 const bcrypt = require('bcrypt')
 
-
-
 module.exports  = {
 
-//signup a new user
-  signup: function(req, res) {
+  signup: (req, res) => {
     let user = req.body;
     let saltRounds = 10;
-    var salt = bcrypt.genSaltSync(saltRounds);
-    user.password = bcrypt.hashSync(user.password, salt);
+    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(saltRounds));
   
     if ( !req.body.username || !req.body.password ) {
       res.status(401).send({
@@ -22,7 +18,7 @@ module.exports  = {
       });
     } else {
       let newUser = new User(user);
-      newUser.save(function(err) {
+      newUser.save((err) => {
         if (err) {
           if (err.code === 11000) {
             return res.status(401).send({
@@ -48,12 +44,12 @@ module.exports  = {
   },
 
   //login a user
-  login: function(req, res) {
+  login: (req, res) => {
     User.findOne({
         username: req.body.username
       })
       .select('username password')
-      .exec(function(err, user) {
+      .exec((err, user) => {
         if (err) {
           throw err;
         }

@@ -61,7 +61,7 @@ class Characterlist extends Component {
   }
 
   getSelectedCharacter(selected) {
-    let filtered = this.props.characters.allCharacters.filter(function(item) { 
+    let filtered = this.props.characters.allCharacters.filter((item) => { 
       return item === selected
     }); 
     let details = filtered[0]

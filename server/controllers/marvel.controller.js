@@ -10,7 +10,7 @@ const ts = Date.now(),
  BASE_URL = `https://gateway.marvel.com:443/v1/public/characters`,
 
 module.exports = {
-  fetchCharacters: function(req, res) {
+  fetchCharacters: (req, res) => {
     let hash = md5(data);
     axios
       .get(BASE_URL + `?ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}`)
@@ -19,7 +19,6 @@ module.exports = {
         res.send(results.data);
       })
       .catch(err => {
-        console.log(err, 'err from fetch')
         res.status(400).json(err);
       })
   }
