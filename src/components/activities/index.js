@@ -15,8 +15,7 @@ class ActivityComponent extends Component {
   render() {
     return (
       <div>
-        <HeaderComponent />
-        <Header>Acivity Log</Header>
+        <div className="header-act"><Header>Activity Log</Header></div>
         <div className="activity-wrapper">
           { this.props.characters.activities ? this.renderActivities(this.props.characters.activities) : <h5>Loading activities...</h5>}
         </div>

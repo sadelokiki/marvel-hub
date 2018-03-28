@@ -42,7 +42,7 @@ class Characterlist extends Component {
 
             <Header>Related Links</Header> 
             { this.state.relatedlinks.length ? this.state.relatedlinks.map((item, i) => {
-              return <p key={i}>{item.url}</p>
+              return <a href={item.url} key={i}>{item.url}</a>
             }) : 'No stories to display' }
 
           </Modal.Description>
@@ -79,7 +79,7 @@ class Characterlist extends Component {
       <div className="row list-wrapper">
         <Grid divided="vertically">
         <Grid.Row columns={3}>
-            { !this.props.characters.allCharacters ? null : this.props.characters.allCharacters.map((character, i) => {
+            { !this.props.characters.allCharacters ? <h3>Loading characters...</h3> : this.props.characters.allCharacters.map((character, i) => {
               return (
                 <div key={i}>
                   <Grid.Column key={i}>

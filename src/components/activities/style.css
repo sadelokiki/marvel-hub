@@ -6,7 +6,6 @@ span {
   padding: 50px;
 }
 
-.ui.header {
+.header-act {
   text-align: center;
-  text-decoration: underline;
 }

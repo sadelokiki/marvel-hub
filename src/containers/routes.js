@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Home from './home';
 import LoginForm from '../components/login';
-import ActivityComponent from '../components/activities';
+import ActivityComponent from './activities';
 
 export default class Routes extends Component {
   render() {

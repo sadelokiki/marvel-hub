@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Input } from 'semantic-ui-react';
+import { Button, Input, Form, Segment } from 'semantic-ui-react';
 import './style.css';
 import Auth from '../../lib/auth';
 
@@ -67,19 +67,19 @@ export default class LoginForm extends Component {
   renderLogin() {
     return (
       <div className="container form-wrapper">
-          <div className="card-title">{this.props.match.url === '/signup' ? 'Sign up' : 'Login'}</div>
-          <form onSubmit={this.onSubmit.bind(this)}>
-            <div className="block">
-                <Input name="username" className="default-input" type="text" placeholder="enter username" onChange={this.onNameChange.bind(this)}/>
-            </div>
-            <div className="block">
-                <Input name="password" className="default-input" type="password" onChange={this.onPasswordChange.bind(this)} placeholder="enter password" />
-            </div>
-            <div className="center">
-                <Button className='green' waves='light'>Login</Button>
-            </div>
-           {this.props.match.url === '/signup' ? <p onClick={this.gotoLogin.bind(this)}>Login</p> : <p onClick={this.goToSignup.bind(this)}>Signup</p> }
-          </form>
+          <h3 className="card-title">{this.props.match.url === '/signup' ? 'Sign up' : 'Login'}</h3>
+          <Segment inverted>
+          <Form inverted onSubmit={this.onSubmit.bind(this)}>
+            <Form.Group widths='equal'>
+              <Form.Input fluid label='Username' placeholder='Username' onChange={this.onNameChange.bind(this)} />
+              <Form.Input type="password" fluid label='Password' placeholder='Password' onChange={this.onPasswordChange.bind(this)}/>
+            </Form.Group>
+            <Button type='submit'>Submit</Button>
+          </Form>
+        </Segment>
+           {this.props.match.url === '/signup' ? 
+            <div>Already registered?<p className="reg-link" onClick={this.gotoLogin.bind(this)}>Login</p></div> : 
+            <div>Not registered?<p className="reg-link" onClick={this.goToSignup.bind(this)}>Signup</p></div> }
       </div>
     )
   }
